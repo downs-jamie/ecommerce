@@ -11,10 +11,18 @@ import { createStore, applyMiddleware } from 'redux';
 
 import RootReducer from './reducers/RootReducer';
 
-import reduxPromise from 'redux-promise'
+import reduxPromise from 'redux-promise';
+import { Provider } from 'react-redux';
+const theStore = applyMiddleware(reduxPromise)(createStore)(RootReducer)
+// const middleWare = applyMiddleware(reduxPromise);
+// const storeWithMid = middleWare(createStore);
+// const theStore = storeWithMid(RootReducer)
+// x()()()
 
 ReactDOM.render(
-	<App />,
+	<Provider store={theStore}>
+		<App />
+	</Provider>,
 	document.getElementById('root')
 );
 
