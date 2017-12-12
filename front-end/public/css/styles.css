@@ -5,9 +5,11 @@ body {
 #first{
 	height: 60px;
 	text-align: center;
+	background: mediumvioletred;
 }
 #second{
 	height: 60px;
+	background: palevioletred;
 }
 
 .pics img{
