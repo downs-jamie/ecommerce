@@ -9,19 +9,20 @@ class NavBar extends Component{
 		return(
 			<div id="navbar">
 				<nav className="navbar navbar-fixed-top">
-            		<div className="container-fluid navbar-white">
+            		<div id="first" className="container-fluid navbar-default">
             			<div className="container">
 	                		<ul className="nav navbar-nav">
 	                			<li>Home</li>
 	                			<li>Shop</li>
 	                			<li>About Us</li>
 	                			<li>Contact Us</li>
-	                			<input type="text" className="nav navbar-nav pull-right" placeholder="Search for Iteams"/>
-	                			<button type="Search">SEARCH</button>
+	                			
 	                		</ul>
+	                		<input type="text" className="nav navbar-nav pull-right" placeholder="Search for Iteams"/>
+	                		<button type="Search" className="nav navbar-nav pull-right">SEARCH</button>
 	                	</div>
                 	</div>
-                	<div className="container-fluid navbar-default">
+                	<div id="second" className="container-fluid navbar-default">
                 		<div className="container">
                 			<div className="nav navbar-header">
                 				ClassicModels Logo
