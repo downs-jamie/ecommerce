@@ -1,3 +1,31 @@
-body{
-	background-color: blue;
+
+body {
+  background-color: darkseagreen; 
+}
+
+#first{
+	height: 60px;
+	text-align: center;
+	background: darkgreen;
+}
+#second{
+	height: 60px;
+	background: seagreen;
+}
+
+.pics img{
+	margin-top: 120px;
+	padding-left: 50px;
+	width: 100%;
+	height: 60vh;
+}
+.top1{
+	margin-top: 150px;
+}
+.nav.pull-right{
+	li{
+		a{
+			display: inline;
+		}
+	}
 }

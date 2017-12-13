@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import Bootstrap from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class NavBar extends Component{
 	constructor(){
@@ -12,10 +13,10 @@ class NavBar extends Component{
             		<div id="first" className="container-fluid navbar-default">
             			<div className="container">
 	                		<ul className="nav navbar-nav">
-	                			<li>Home</li>
-	                			<li>Shop</li>
-	                			<li>About Us</li>
-	                			<li>Contact Us</li>
+	                			<li><Link to="/">Home</Link></li>
+	                			<li><Link to="/Shop">Shop</Link></li>
+	                			<li><Link to="/About">About Us</Link></li>
+	                			<li><Link to="/Contact">Contact Us</Link></li>
 	                			
 	                		</ul>
 	                		<input type="text" className="nav navbar-nav pull-right" placeholder="Search for Iteams"/>
@@ -28,7 +29,7 @@ class NavBar extends Component{
                 				ClassicModels Logo
                 			</div>
                 			<div className="nav navbar-nav pull-right">
-                				<li>Sign in or Create an Account</li>
+                				<li><Link to="/login">Sign in</Link> or <Link to="/register">Create an Account</Link></li>
                 				<li>(0)iteams in the cart | ($0.00)</li>
                 			</div>
                 		</div>

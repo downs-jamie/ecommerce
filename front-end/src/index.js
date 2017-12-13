@@ -13,7 +13,7 @@ import RootReducer from './reducers/RootReducer';
 
 import reduxPromise from 'redux-promise';
 import { Provider } from 'react-redux';
-const theStore = applyMiddleware(reduxPromise)(createStore)(RootReducer)
+const theStore = applyMiddleware(reduxPromise)(createStore)(RootReducer, window.__REDUX_DEVTOOLS_EXTENSION__());
 // const middleWare = applyMiddleware(reduxPromise);
 // const storeWithMid = middleWare(createStore);
 // const theStore = storeWithMid(RootReducer)
