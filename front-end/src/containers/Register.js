@@ -12,13 +12,49 @@ class Register extends Component{
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
 	}
-	handleSubmit(event){
-		event.preventDefault();
-		const name = document.getElementById('name').value;
-		this.props.authAction(name);
+	componentWillReceiveProps(newProps){
+		console.log(this.props);
+		console.log(newProps);
+		if(newProps.auth.msg === "registerSuccess"){
+			// the user was inserted. 
+			// We have the token and name safely in the auth reducer.
+			// Move them to the home page.
+			this.props.history.push('/');
+			// line above: tell teh router to move them forward to /
+		}else if(newProps.auth.msg === "userExists"){
+			this.setState({
+				error: "This email address is already registered. Please login or use a different email."
+			})
+		}
 	}
+	handleSubmit(event){
+        event.preventDefault();
+        var formData = {
+            name: event.target[0].value,
+            email: event.target[1].value,
+            accountType: event.target[2].value,
+            password: event.target[3].value,
+            city: event.target[4].value,
+            state: event.target[5].value,
+            salesRep: event.target[6].value
+        }
+        if(formData.name === ""){
+			this.setState({
+				error: "Name field cannot be empty.",
+				// type: "error"
+			})
+		}else{
+			this.props.authAction(formData);
+		}
+		// console.log(formData)
+        // console.log(formData);
+        // this.props.authAction(formData);
+    }
 	render(){
-		console.log(this.props.auth)
+		console.log(this.props.auth);
+		if(this.state.type === "error"){
+			var msgClass = "text-dagner"
+		}
 		return(
 			<div className="top1">
 				<Form horizontal onSubmit={this.handleSubmit}>
@@ -100,10 +136,12 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
+	// dispatch is teh thing that takes any action
+	// and sends it out to all teh reducers	
 	return bindActionCreators({
 		authAction: AuthAction
 	}, dispatch)
 }
-
+console.log(connect);
 
 export default connect(mapStateToProps,mapDispatchToProps)(Register);
