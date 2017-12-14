@@ -142,6 +142,9 @@ function mapDispatchToProps(dispatch){
 		authAction: AuthAction
 	}, dispatch)
 }
+// export default Register;
 console.log(connect);
-
+// var connectWithReduxFunction = connect(mapStateToProps,mapDispatchToProps);
+// var componentThatKnowsAboutRedux = connectWithReduxFunction(Register)
 export default connect(mapStateToProps,mapDispatchToProps)(Register);
+// export default componentThatKnowsAboutRedux;
